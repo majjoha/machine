@@ -7,9 +7,15 @@ process.
 
 ## User setup
 SSH into the machine as the root user and create your personal user.
-```
-useradd mathias
-passwd mathias
+```bash
+adduser mathias
 ```
 
-Add this user to the sudoers group: ``sudo adduser mathias sudo``.
+Add this user to the sudoers group:
+```bash
+sudo adduser mathias sudo
+```
+
+Log in with the newly created user and set the current directory to ``machine``.
+Now, simply just run the ``./bootstrap`` file and everything should be
+configured for you.
