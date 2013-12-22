@@ -3,7 +3,7 @@ packages=( 'update' 'safe-upgrade' 'build-essential' 'vim' 'git' 'curl' 'tmux' '
 
 for package in "${packages[@]}"
 do
-  echo -e "\e[0;32mInstalling $package...\e[0m"
+echo -e "\e[0;32mInstalling $package...\e[0m"
   sudo aptitude install -y "$package"
 done
 
