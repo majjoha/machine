@@ -1,12 +1,22 @@
 # Install the following packages:
-packages=( 'build-essential' 'vim' 'git' 'curl' 'tmux' 'irssi' 'tig' 'zsh' 'haskell-platform' );
+packages=( 'build-essential' \
+           'vim' \
+           'git' \
+           'curl' \
+           'tmux' \
+           'irssi' \
+           'tig' \
+           'zsh' \
+           'haskell-platform' );
 
+# Update system before installing packages.
 sudo apt-get -y update
 sudo apt-get -y safe-upgrade
 sudo apt-get -y install aptitude
 sudo aptitude -y update
 sudo aptitude -y safe-upgrade
 
+# Install each package from the packages array.
 for package in "${packages[@]}"
 do
   echo -e "\e[0;32mInstalling $package...\e[0m"
