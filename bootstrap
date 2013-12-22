@@ -6,13 +6,13 @@
 
 platform=`uname`
 if [[ "$platform" == 'Linux' ]]; then
-  bash linux/install_packages.sh
+  bash linux/install_packages
 elif [[ "$platform" == 'Darwin' ]]; then
-  bash osx/install_packages.sh
+  bash osx/install_packages
 fi
 
-# Add dotfiles submodule.
-git submodule add https://github.com/majjoha/dotfiles.git $HOME/.env
+# Add dotfiles repository.
+git clone https://github.com/majjoha/dotfiles.git $HOME/.env
 
 # Install oh-my-zsh.
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -23,11 +23,11 @@ chsh -s /bin/zsh
 # Install RVM and get the latest stable Ruby release.
 curl -L https://get.rvm.io | bash -s stable --ruby
 
-# Source RVM
+# Source RVM.
 source $HOME/.rvm/scripts/rvm
 
-# Symlink entire dotfiles repository
+# Symlink entire dotfiles repository.
 cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
 
-# Source .zshrc
+# Source .zshrc.
 source $HOME/.zshrc
