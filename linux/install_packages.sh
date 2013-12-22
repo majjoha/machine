@@ -1,5 +1,15 @@
 # Install the following packages:
-packages=( 'update' 'safe-upgrade' 'build-essential' 'vim' 'git' 'curl' 'tmux' 'irssi' 'tig' 'zsh' 'haskell-platform' );
+packages=( 'update' \
+           'safe-upgrade' \
+           'build-essential' \
+           'vim' \
+           'git' \
+           'curl' \
+           'tmux' \
+           'irssi' \
+           'tig' \
+           'zsh' \
+           'haskell-platform' );
 
 # Update system packages with apt-get.
 sudo apt-get -y update
