@@ -12,7 +12,7 @@ elif [[ "$platform" == 'Darwin' ]]; then
 fi
 
 # Add dotfiles submodule.
-git submodule add https://github.com/majjoha/dotfiles.git
+git submodule add https://github.com/majjoha/dotfiles.git $HOME/.env
 
 # Install oh-my-zsh.
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -26,4 +26,8 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 # Source RVM
 source $HOME/.rvm/scripts/rvm
 
-cd ~/ && ~/machine/bin/symlinktree $HOME/dotfiles
+# Symlink entire dotfiles repository
+cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
+
+# Source .zshrc
+source $HOME/.zshrc
