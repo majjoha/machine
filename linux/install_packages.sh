@@ -1,15 +1,5 @@
 # Install the following packages:
-packages=( 'update' \
-           'safe-upgrade' \
-           'build-essential' \
-           'vim' \
-           'git' \
-           'curl' \
-           'tmux' \
-           'irssi' \
-           'tig' \
-           'zsh' \
-           'haskell-platform' );
+packages=( 'update' 'safe-upgrade' 'build-essential' 'vim' 'git' 'curl' 'tmux' 'irssi' 'tig' 'zsh' 'haskell-platform' );
 
 for package in "${packages[@]}"
 do
