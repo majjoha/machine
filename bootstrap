@@ -29,5 +29,14 @@ source $HOME/.rvm/scripts/rvm
 # Symlink entire dotfiles repository.
 cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
 
+cp $HOME/.env/.vim/colors/Tomorrow-Night.vim $HOME/.vim/colors/Tomorrow-Night.vim
+
 # Source .zshrc.
 source $HOME/.zshrc
+
+echo "\e[0;32mFinished setting up machine..."
+echo "\e[0;32mLogging out in five seconds..."
+
+# Log out of machine to enter zsh
+sleep 5
+exit
