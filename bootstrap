@@ -15,7 +15,7 @@ fi
 git clone https://github.com/majjoha/dotfiles.git $HOME/.env
 
 # Install oh-my-zsh.
-git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+#git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
 # Change default shell from bash to zsh.
 sudo chsh -s $(which zsh) $(whoami)
