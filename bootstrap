@@ -32,4 +32,4 @@ cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
 # Source .zshrc.
 source $HOME/.zshrc
 
-echo -e "\e[0;32mFinished setting up machine..."
+echo -e "\e[0;32mFinished setting up machine..." tput sgr0
