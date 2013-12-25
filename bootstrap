@@ -6,16 +6,16 @@
 
 platform=`uname`
 if [[ "$platform" == 'Linux' ]]; then
-  bash linux/install_packages
+  bash $HOME/machine/linux/install_packages
 elif [[ "$platform" == 'Darwin' ]]; then
-  bash osx/install_packages
+  bash $HOME/machine/osx/install_packages
 fi
 
 # Add dotfiles repository.
 git clone https://github.com/majjoha/dotfiles.git $HOME/.env
 
 # Install oh-my-zsh.
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
 # Change default shell from bash to zsh.
 sudo chsh -s $(which zsh) $(whoami)
@@ -29,14 +29,7 @@ source $HOME/.rvm/scripts/rvm
 # Symlink entire dotfiles repository.
 cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
 
-cp $HOME/.env/.vim/colors/Tomorrow-Night.vim $HOME/.vim/colors/Tomorrow-Night.vim
-
 # Source .zshrc.
 source $HOME/.zshrc
 
-echo "\e[0;32mFinished setting up machine..."
-echo "\e[0;32mLogging out in five seconds..."
-
-# Log out of machine to enter zsh
-sleep 5
-exit
+echo -e "\e[0;32mFinished setting up machine..."
