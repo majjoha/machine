@@ -7,7 +7,12 @@ packages=( 'build-essential' \
            'irssi' \
            'tig' \
            'zsh' \
-           'haskell-platform' );
+           'haskell-platform',
+           'oracle-java7-installer',
+           'leiningen');
+
+# Add Java repository
+sudo add-apt-repository ppa:webupd8team/java
 
 # Update system before installing packages.
 sudo apt-get -y update
