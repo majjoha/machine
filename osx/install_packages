@@ -1,2 +1,26 @@
-# TODO:
-# This file should contain brew among other things.
+# Install the following packages:
+packages=( 'apple-gcc42' \
+           'autoconf' \
+           'automake' \
+           'cdrtools' \
+           'cmake' \
+           'ctags' \
+           'irssi' \
+           'mysql' \
+           'node' \
+           'reattach-to-user-namespace' \
+           'the_silver_searcher' \
+           'tig' \
+           'tmux' \
+           'todo-txt' \
+           'leiningen' );
+
+# First, install Homebrew which is used to install most of the packages.
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+# Install each package from the packages array.
+for package in "${packages[@]}"
+do
+  echo -e "\e[0;32mInstalling $package...\e[0m"
+  sudo aptitude install -y "$package"
+done
