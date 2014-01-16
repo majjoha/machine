@@ -6,7 +6,7 @@ It is written in bash script to ensure portability and ease the setup
 process.
 
 ## Install
-```
+```bash
 $ git clone https://github.com/majjoha/machine.git
 $ machine/boostrap
 ```
