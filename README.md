@@ -1,4 +1,4 @@
-# Machine
+# machine
 This repository sets up a machine with my preferred tools. It aims to work on
 both an Ubuntu and a Mac OS X machine.
 
