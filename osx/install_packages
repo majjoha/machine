@@ -3,24 +3,27 @@ packages=( 'apple-gcc42' \
            'autoconf' \
            'automake' \
            'cdrtools' \
+           'clojure' \
+           'clojure-contrib' \
            'cmake' \
            'ctags' \
            'irssi' \
+           'leiningen' \
            'mysql' \
            'node' \
            'reattach-to-user-namespace' \
            'the_silver_searcher' \
            'tig' \
            'tmux' \
-           'todo-txt' \
-           'leiningen' );
+           'todo-txt' );
 
 # First, install Homebrew which is used to install most of the packages.
+echo -e "\e[0;32mInstalling Homebrew...\e[0m"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 # Install each package from the packages array.
 for package in "${packages[@]}"
 do
   echo -e "\e[0;32mInstalling $package...\e[0m"
-  sudo aptitude install -y "$package"
+  brew install "$package"
 done
