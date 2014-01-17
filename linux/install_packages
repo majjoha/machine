@@ -6,13 +6,7 @@ packages=( 'build-essential' \
            'tmux' \
            'irssi' \
            'tig' \
-           'zsh' \
-           'haskell-platform',
-           'oracle-java7-installer',
-           'leiningen');
-
-# Add Java repository
-sudo add-apt-repository ppa:webupd8team/java
+           'zsh' );
 
 # Update system before installing packages.
 sudo apt-get -y update
@@ -27,3 +21,10 @@ do
   echo -e "\e[0;32mInstalling $package...\e[0m"
   sudo aptitude install -y "$package"
 done
+
+# Install RVM and get the latest stable Ruby release.
+echo -e "\e[0;32mInstalling RVM...\e[0m"
+curl -L https://get.rvm.io | bash -s stable --ruby
+
+# Source RVM.
+source $HOME/.rvm/scripts/rvm
