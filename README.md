@@ -1,9 +1,8 @@
 # Machine
-This repository sets up a machine with my preferred tools. It works on both an
-Ubuntu and a Mac OS X machine.
+This repository sets up a machine with my preferred tools. It aims to work on
+both an Ubuntu and a Mac OS X machine.
 
-It is written in bash script to ensure portability and ease the setup
-process.
+It is written in bash script to ensure portability and ease the setup process.
 
 ## Install
 ```bash
