@@ -9,3 +9,8 @@ It is written in bash script to ensure portability and ease the setup process.
 $ git clone https://github.com/majjoha/machine.git
 $ machine/boostrap
 ```
+
+## Inspiration
+This project is loosely inspired by the
+[thoughtbot/laptop](https://github.com/thoughtbot/laptop) and
+[rdegges/ubootstrap](https://github.com/rdegges/ubootstrap) repositories.
