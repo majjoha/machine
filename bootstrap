@@ -8,6 +8,8 @@ platform=`uname`
 if [[ "$platform" == 'Linux' ]]; then
   bash $HOME/machine/linux/install_packages
 elif [[ "$platform" == 'Darwin' ]]; then
+  # Allow colored output
+  export CLICOLOR=1
   bash $HOME/machine/osx/install_packages
 fi
 
