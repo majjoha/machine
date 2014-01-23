@@ -16,6 +16,8 @@ fi
 # Add dotfiles repository.
 git clone --recursive https://github.com/majjoha/dotfiles.git $HOME/.env
 
+cd $HOME/.env && git submodule init && git submodule update && cd $HOME
+
 # Install oh-my-zsh.
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
