@@ -25,7 +25,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 sudo chsh -s $(which zsh) $(whoami)
 
 # Symlink entire dotfiles repository.
-cd $HOME && sudo bash $HOME/machine/bin/symlinktree $HOME/.env
+sudo bash $HOME/machine/bin/symlinktree $HOME/.env
 
 # Source .zshrc.
 source $HOME/.zshrc
