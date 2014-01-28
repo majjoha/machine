@@ -40,7 +40,10 @@ applications=( 'onepassword' \
                'virtualbox' \
                'vlc' );
 
-# First, install Homebrew which is used to install most of the packages.
+# First, install command-line developer tools.
+xcode-select --install
+
+# Install Homebrew which is used to install most of the packages.
 echo -e "\e[0;32mInstalling Homebrew...\e[0m"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
