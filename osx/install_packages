@@ -17,6 +17,29 @@ packages=( 'apple-gcc42' \
            'tmux' \
            'todo-txt' );
 
+# Install the applications listed below.
+applications=( 'onepassword' \
+               'alfred' \
+               'caffeine' \
+               'calibre' \
+               'dropbox' \
+               'firefox' \
+               'phinze-cask/f-lux' \
+               'google-chrome' \
+               'hipchat' \
+               'iterm2' \
+               'macvim' \
+               'moom' \
+               'mou' \
+               'pckeyboardhack' \
+               'rescuetime' \
+               'skype' \
+               'the-unarchiver' \
+               'transmission' \
+               'vagrant' \
+               'virtualbox' \
+               'vlc' );
+
 # First, install Homebrew which is used to install most of the packages.
 echo -e "\e[0;32mInstalling Homebrew...\e[0m"
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -27,3 +50,20 @@ do
   echo -e "\e[0;32mInstalling $package...\e[0m"
   brew install "$package"
 done
+
+# Install and setup homebrew-cask.
+brew tap phinze/cask
+brew install brew-cask
+
+# Symlink the applications to /Applications.
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Install each application from the applications array.
+for application in "${applications[@]}"
+do
+  echo -e "\e[0;32mInstalling $application...\e[0m"
+  brew cask install "$package"
+done
+
+# Make Alfred integrate with homebrew-cask.
+brew cask alfred
