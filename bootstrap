@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script sets up a machine with my preferred tools. It is aimed for either
 # an Ubuntu or Mac machine. Obviously, it is heavily inspired by ubootstrap
 # by rdegges which can be found here:
@@ -16,16 +16,14 @@ fi
 # Add dotfiles repository.
 git clone --recursive https://github.com/majjoha/dotfiles.git $HOME/.env
 
-cd $HOME/.env && git submodule init && git submodule update && cd $HOME
-
 # Install oh-my-zsh.
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
 
 # Change default shell from bash to zsh.
 sudo chsh -s $(which zsh) $(whoami)
 
-# Symlink entire dotfiles repository.
-sudo bash $HOME/machine/bin/symlinktree $HOME/.env
+# Setup dotfiles.
+sudo bash $HOME/.env/script/bootstrap
 
 # Source .zshrc.
 source $HOME/.zshrc
