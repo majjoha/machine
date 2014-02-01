@@ -69,4 +69,4 @@ do
 done
 
 # Make Alfred integrate with homebrew-cask.
-brew cask alfred
+brew cask alfred link
